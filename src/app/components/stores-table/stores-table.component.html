@@ -1,0 +1,20 @@
+<table class="table table-dark">
+    <thead>
+        <tr>
+            <th>id</th>
+            <th scope="col">name</th>
+            <th scope="col">adress</th>
+            <th>action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let store of stores">
+            <td>{{store.id}}</td>
+            <td>{{store.name}}</td>
+            <td>{{store.adress}}</td>
+            <td>
+                <button class="btn btn-warning" (click)="editStore(store.id)">Edit</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

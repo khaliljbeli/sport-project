@@ -1,0 +1,9 @@
+<div class="card" style="width: 18rem;">
+    <img class="card-img-top" [src]="user.img" *ngIf="user?.img" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title" style="color: black;"><span style="color: red;"> First Name : </span>{{user?.fName}}</h5>
+      <h5 class="card-title" style="color: black;"><span style="color: red;"> Last Name : </span>{{user?.lName}}</h5>
+      <h5 class="card-title" style="color: black;"><span style="color: red;"> Email : </span>{{user?.email}}</h5>
+      <h5 class="card-title" style="color: black;"><span style="color: red;"> tel : </span>{{user?.tel}}</h5>
+    </div>
+  </div>

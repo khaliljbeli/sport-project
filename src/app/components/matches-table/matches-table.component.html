@@ -1,0 +1,26 @@
+    <table class="table table-dark">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th scope="col">team one</th>
+                <th scope="col">team two</th>
+                <th scope="col">score one</th>
+                <th scope="col">score two</th>
+                <th>action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let match of matches">
+                <td>{{match._id}}</td>
+                <td>{{match.scoreOne}}</td>
+                <td>{{match.scoreTwo}}</td>
+                <td>{{match.teamOne}}</td>
+                <td>{{match.teamTwo}}</td>
+                <td>
+                    <button class="btn btn-info" (click)="displayMatch(match._id)">Display</button>
+                    <button class="btn btn-warning" (click)="goToEdit(match._id)">Edit</button>
+                    <button class="btn btn-danger" (click)="deleteMatch(match._id)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>

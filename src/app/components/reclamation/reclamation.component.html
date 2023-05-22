@@ -1,0 +1,45 @@
+<div class="hero overlay" style="background-image: url('assets/images/bg_3.jpg');">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-9 mx-auto text-center">
+                <h1 class="text-white">reclamation</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<form class="site-section" [formGroup]="reclamForm">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7">
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Subject</label>
+                    <input type="text" class="form-control" formControlName="subject" id="subject"
+                        aria-describedby="emailHelp">
+                </div>
+                <div *ngIf="reclamForm.controls['subject'].invalid &&
+                (reclamForm.controls['subject'].touched ||
+                reclamForm.controls['subject'].dirty)">
+                    <div *ngIf="reclamForm.controls['subject'].errors.required" style="color: red;">
+                        required
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Description</label>
+                    <input type="text" class="form-control" formControlName="description" id="description"
+                        aria-describedby="emailHelp">
+                </div>
+                <div *ngIf="reclamForm.controls['description'].invalid &&
+                (reclamForm.controls['description'].touched ||
+                reclamForm.controls['description'].dirty)">
+                    <div *ngIf="reclamForm.controls['description'].errors.required" style="color: red;">
+                        required
+                    </div>
+                    
+                </div>
+                <button type="submit" class="btn btn-primary" [disabled]="reclamForm.invalid"
+                    (click)="reclam()">Send</button>
+            </div>
+        </div>
+    </div>
+</form>
